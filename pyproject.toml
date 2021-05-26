@@ -1,0 +1,13 @@
+[tool.poetry]
+name = "app"
+version = "0.1.0"
+description = ""
+authors = ["KaNe23 <germain.wessely@plugintheworld.com>"]
+
+[tool.poetry.dependencies]
+python = "3.9.5"
+fastapi = "0.63.0"
+uvicorn = "0.13.3"
+databases = {extras = ["sqlite"], version = "0.4.3"}
+alembic = "1.4.3"
+aiofiles = "^0.7.0"

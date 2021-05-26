@@ -1,0 +1,32 @@
+<html>
+<head>
+  <title>FastAPI Pydantic Json Schema</title>
+  <script src="https://cdn.jsdelivr.net/npm/@json-editor/json-editor@latest/dist/jsoneditor.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<div id="form"></div>
+	<script>
+		$.ajax({
+		  url: "http://localhost:8000/schema",
+		}).done(function(data) {
+		  
+
+  		const element = document.getElementById('form');
+
+		options = {
+		            schema: data,
+		            theme: 'html',
+		            disable_collapse: true,
+		            disable_properties: true,
+		            disable_edit_json: true,
+		            form_name_root: 'form',
+		          };
+		
+		const editor = new JSONEditor(element, options);
+		});
+	</script>
+</body>
+
+</html> 
