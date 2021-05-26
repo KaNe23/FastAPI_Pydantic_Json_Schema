@@ -6,14 +6,14 @@
 </head>
 
 <body>
-	<div id="form"></div>
+	<div id="form1"></div>
 	<script>
 		$.ajax({
 		  url: "http://localhost:8000/schema",
 		}).done(function(data) {
 		  
 
-  		const element = document.getElementById('form');
+  		const element = document.getElementById('form1');
 
 		options = {
 		            schema: data,
@@ -21,7 +21,29 @@
 		            disable_collapse: true,
 		            disable_properties: true,
 		            disable_edit_json: true,
-		            form_name_root: 'form',
+		            form_name_root: 'form1',
+		          };
+		
+		const editor = new JSONEditor(element, options);
+		});
+	</script>
+
+	<div id="form2"></div>
+	<script>
+		$.ajax({
+		  url: "http://localhost:8000/schema2",
+		}).done(function(data) {
+		  
+
+  		const element = document.getElementById('form2');
+
+		options = {
+		            schema: data,
+		            theme: 'html',
+		            disable_collapse: true,
+		            disable_properties: true,
+		            disable_edit_json: true,
+		            form_name_root: 'form2',
 		          };
 		
 		const editor = new JSONEditor(element, options);
